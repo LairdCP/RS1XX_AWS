@@ -16,7 +16,7 @@ const messages = require('./messages_laird');
  * @param event: Event details.
  * @param context: Application context details.
  *****************************************************************************/
-exports.main = async function(event, context) {
+exports.handler = async function(event, context) {
 
     var PayloadData = event.PayloadData;
     var data = Buffer.from(PayloadData, 'base64');

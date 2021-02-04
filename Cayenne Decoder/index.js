@@ -16,7 +16,7 @@ const sensor_types_cayenne = require('./sensor_types_cayenne')
  * @param event: Event details.
  * @param context: Application context details.
  *****************************************************************************/
-exports.main = async function(event, context) {
+exports.handler = async function(event, context) {
 
     var PayloadData = event.PayloadData;
     var data = Buffer.from(PayloadData, 'base64');
