@@ -31,7 +31,7 @@ Refer to [2] for more details of the AWS Lambda console. More details of AWS S3 
 
 The following files are included in the Cayenne Decoder folder.
 
-* decoder_cayenne.js - This is the entry point for the Lambda function.
+* index.js - This is the entry point for the Lambda function.
 
 * library_cayenne.js - Contains the Cayenne protocol decoding logic.
 
@@ -39,7 +39,7 @@ The following files are included in the Cayenne Decoder folder.
 
 The following files are included in the Laird Decoder folder.
 
-* decoder_laird.js - This is the entry point for the Lambda function.
+* index.js - This is the entry point for the Lambda function.
 
 * library_laird.js - Contains the Laird & Laird 2 protocol decoding logic.
 
