@@ -8,7 +8,7 @@
  *****************************************************************************/
 const AWS = require('aws-sdk');
 const decode = require('./library_cayenne');
-const sensor_types_cayenne = require('./sensor_types_cayenne')
+const sensor_types_cayenne = require('./sensor_types_cayenne');
 
 /******************************************************************************
  * LoRaWan for AWS event handler
@@ -21,7 +21,8 @@ exports.handler = async function(event, context) {
     var PayloadData = event.PayloadData;
     var data = Buffer.from(PayloadData, 'base64');
     var values = Object.values(decode(data));
-    var data = {};
+    
+    data = {};
     
     // Add an incoming timestamp in the Lambda
     data.timestamp = new Date().getTime();
@@ -82,11 +83,11 @@ exports.handler = async function(event, context) {
                 data.loc = loc;
                 break;
             default:
-                console.log('Something messed up, type not handled.')
+                console.log('Something messed up, type not handled.');
                 break;
-        };
+        }
     });
 
     console.log(data);
     return(data); 
-}
+};

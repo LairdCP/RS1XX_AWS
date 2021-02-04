@@ -108,6 +108,7 @@ function decode(payload) {
 
     var sensors = [];
     var message = {};
+    var s_value;
 
     if (payload == null){
 
@@ -203,7 +204,6 @@ function decodeLairdMsgTypeAggTempRH(payload){
     var s_value = null;
     var readingsByteIndex;
     var readingsIndex = 0;
-    var readings;
     var humidity;
     var temperature;
 
@@ -369,8 +369,6 @@ function decodeLairdMsgTypeAggTempExt(payload){
     var s_value = null;
     var readingsByteIndex;
     var readingsIndex = 0;
-    var readings;
-    var humidity;
     var temperature;
 
     if (payload.length > LAIRD_MSG_TYPE_AGG_TEMP_EXT_BASE_LENGTH) {
@@ -488,7 +486,6 @@ function FourBytesToFloat(stream){
  *****************************************************************************/
 function TwoBytesToUInt16(stream) {
 
-    var result;
     var uInt16Data = stream.slice(0,2);
     var uInt16View = new DataView(new ArrayBuffer(2));
     var uInt16Result;
@@ -514,7 +511,6 @@ function TwoBytesToUInt16(stream) {
  *****************************************************************************/
 function FourBytesToUInt32(stream) {
 
-    var result;
     var uInt32Data = stream.slice(0,4);
     var uInt32View = new DataView(new ArrayBuffer(4));
     var uInt32Result;
