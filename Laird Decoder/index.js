@@ -25,10 +25,9 @@ exports.handler = async function(event, context) {
     
     // Add an incoming timestamp in the Lambda
     data.timestamp = new Date().getTime();
-    data.DeviceId = event.DeviceId;
-    data.ApplicationId = event.ApplicationId;
-    data.DevEUI = event.Metadata.LoRaWAN.DevEUI;
-    data.datetime = event.Metadata.LoRaWAN.Timestamp;
+    data.deviceId = event.WirelessDeviceId;
+    data.devEUI = event.WirelessMetadata.LoRaWAN.DevEui;
+    data.datetime = event.WirelessMetadata.LoRaWAN.Timestamp;
     values.forEach(function (sensorEntry){
 
         switch(sensorEntry.type) {
